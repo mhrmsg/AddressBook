@@ -1,0 +1,9 @@
+# -*- coding: utf-8 -*-
+#公用配置
+DEBUG = False
+SQLALCHEMY_ECHO = False
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+SQLALCHEMY_ENCODING = "utf8mb4"
+AUTH_COOKIE_NAME="AddressBook"
+SECRET_KEY = "mhrmsg"
+DEBUG_TB_INTERCEPT_REDIRECTS = False

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="expires" content="0">
+    <title>通讯录</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="/static/plugins/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .azure {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 600% 600%;
+            animation: gradientBG 5s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body >
+<div class="container">
+    <nav class="navbar navbar-expand-md navbar-light  border-bottom shadow-sm fixed-top w-100 azure">
+        <a class="navbar-brand  font-weight-bold ml-5" href="/">简易通讯录<span
+                class="sr-only">简易通讯录</span></a>
+        <!--适配下的按钮、找到navbar所在的div将该div内容进行显示-->
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle mav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <!-- 各导航内容-->
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item ">
+                    <form class="form-inline mt-2 mt-md-0 searchForm" action="/">
+                        <input class="form-control rounded-pill" name="condition" type="text" placeholder="search" aria-label="Search">
+                        <svg   class="bi bi-arrow-right-circle-fill text-light ml-1 goSearch" width="2.3em" height="2.3em"
+                            viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z" />
+                        </svg>
+                    </form>
+                </li>
+            </ul>
+
+            <!--头像-->
+            <figure style="width: 30px;height: 30px;" class="mt-2 mb-2 ml-2" id="myfigure">
+                <a href="#">
+                    <img class="mb-3 rounded-circle shadow myImage"
+                         src="/static/img/user_icon.jpg" alt="我"
+                         width="30" height="30">
+                </a>
+            </figure>
+        </div>
+    </nav>
+    {% block content %} {% endblock %}
+</div>
+
+<script src="/static/js/jquery-3.4.1.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script>
+    //防止内容被遮住
+    let onResize = function () {
+        // apply dynamic padding at the top of the body according to the fixed navbar height
+        $("body").css("margin-top", $(".navbar").height() + 18);
+    };
+    // attach the function to the window resize event
+    $(window).resize(onResize);
+    // call it also when the page is ready after load or reload
+    $(function () {
+        onResize();
+    });
+
+    $(".goSearch").click(function(){
+        $(".searchForm").submit()
+    })
+</script>
+{% block js %}
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content=" Login ? login : sign in ">
+    <meta name="author" content="马浩然 通讯录">
+    <title> 登录页面 - GO ? </title>
+
+    <!-- Bootstrap CSS -->
+    <link href="/static/plugins/bootstrap.min.css" rel="stylesheet">
+    <!-- 背景 css 以及 表单 css -->
+    <link rel="stylesheet" media="screen" href="/static/css/login/style.css">
+    <link href="/static/css/login/login.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+<!-- 背景粒子效果 -->
+<div id="particles-js"></div>
+<!-- 背景粒子效果结束 -->
+<!-- 表单开始 -->
+<form class="form-signin">
+    <!-- 选项链接 -->
+    <div class="text-center mb-4">
+        <div>
+            <svg id="#logo" class="bi bi-emoji-smile text-light " width="7em" height="7em" viewBox="0 0 16 16"
+                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path fill-rule="evenodd"
+                      d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683z"/>
+                <path
+                        d="M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
+            </svg>
+        </div>
+
+        <div class="mt-3">
+            <ul class="nav  nav-login justify-content-center" id="#myTab" role="tablist">
+                <li class="nav-item ">
+                    <a class="nav-link active" id="loginTab" data-toggle="tab" href="#loginContent"
+                       aria-controls="loginContent" aria-selected="true">
+                        登录</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="#regContent" id="regTab" data-toggle="tab"
+                       aria-controls="regContent" aria-selected="false">注册</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="tab-content" id="formContent">
+        <!-- 登录选项 -->
+        <div class=" tab-pane fade  show active" id="loginContent" role="tabpanel" aria-labelledby="loginTab">
+            <div class="form-label-group">
+                <div class="row no-gutters mb-2">
+                    <label for="inputEmail" class="text-light font-weight-bold ml-2">登录账号： (测试账号 123)  </label>
+                </div>
+                <input type="text" id="inputEmail" class="form-control rounded-pill" placeholder="Login address"
+                       name="login_name"
+                       required
+                       autofocus>
+            </div>
+
+            <div class="form-label-group mt-3 ">
+                <div class="row no-gutters">
+                    <div class="mb-2">
+                        <label for="inputPassword" class="text-light font-weight-bold ml-2">密码 : (测试密码 123)</label>
+                    </div>
+                </div>
+                <input type="password" id="inputPassword" class="form-control rounded-pill" placeholder="Password"
+                       name="login_password"
+                       required>
+            </div>
+
+
+            <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button> -->
+            <div class="text-center mt-5 gologin">
+                <a>
+                    <svg class="bi bi-arrow-right-circle-fill text-light" width="3.5em" height="3.5em"
+                         viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <!-- 注册选项  -->
+        <div class="tab-pane fade " id="regContent" role="tabpanel" aria-labelledby="regTab">
+            <div class="container">
+                <div class="mb-3 ">
+                    <h5 class="lead text-light">请填写注册信息</h5>
+                </div>
+                <form>
+                    <div class="form-group row">
+                        <label for="inputRegEmail" class="col-sm col-form-label text-light ml-2">邮箱</label>
+                        <div class="col-sm-12">
+                            <input type="email" class="form-control rounded-pill" id="inputRegEmail"
+                                   name="reg_name"
+                                   placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputRegPassword" class="col-sm col-form-label text-light ml-2">密码 : </label>
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control rounded-pill" id="inputRegPassword"
+                                   name="reg_password"
+                                   placeholder="Password">
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5 goreg">
+                        <a >
+                            <svg class=" bi bi-arrow-return-right text-light" width="3.5em" height="3.5em"
+                                 viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M10.146 5.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 9l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
+                                <path fill-rule="evenodd"
+                                      d="M3 2.5a.5.5 0 0 0-.5.5v4A2.5 2.5 0 0 0 5 9.5h8.5a.5.5 0 0 0 0-1H5A1.5 1.5 0 0 1 3.5 7V3a.5.5 0 0 0-.5-.5z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</form>
+<!--表单结束  -->
+
+<script src="/static/js/jquery-3.4.1.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/particlesjs/lib/particles.min.js"></script>
+<script src="/static/js/particlesjs/app.js"></script>
+<script>
+    //用于点击表情切换颜色
+    const logoImage = [
+        "text-light", "text-body", "text-white",
+
+    ]
+    let logoAttrPos = 0;
+    let logoimagePos = 0;
+    window.document.onclick = function () {
+        let logoAttr = $(".bi-emoji-smile").attr("class").split(" ")
+
+        logoAttr.forEach(function (value, index) {
+            if (logoImage.includes(value)) {
+                logoAttrPos = index;
+                logoimagePos = logoImage.indexOf(logoAttr[logoAttrPos]);
+            }
+        })
+
+        if ($(".bi-emoji-smile").hasClass(logoAttr[logoAttrPos])) {
+            $(".bi-emoji-smile").removeClass(logoAttr[logoAttrPos])
+            if (logoimagePos + 1 === logoImage.length) {
+                logoimagePos = 0
+                $(".bi-emoji-smile").addClass(logoImage[logoimagePos])
+            } else {
+                $(".bi-emoji-smile").addClass(logoImage[logoimagePos + 1])
+            }
+        }
+
+    }
+    //点击表情图像的时候取消事件
+    $(".bi-emoji-smile").click(function () {
+        let logoAttr = $(".bi-emoji-smile").attr("class").split(" ")
+        if ($(".bi-emoji-smile").hasClass(logoAttr[logoAttrPos])) {
+            $(".bi-emoji-smile").removeClass(logoAttr[logoAttrPos])
+            $(".bi-emoji-smile").addClass("text-light")
+        }
+        window.document.onclick = function () {
+        }
+
+    })
+</script>
+<script>
+    ;
+    var member_login_ops = {
+        init: function () {
+            this.eventBind();
+        },
+        eventBind: function () {
+            $(".gologin").click(function () {
+                var btn_target = $(this);
+                if (btn_target.hasClass("disabled")) {
+                    alert("正在处理！！请不要重复点击~~");
+                    return;
+                }
+                var login_name = $("input[name=login_name]").val();
+                var login_pwd = $("input[name=login_password]").val();
+                if (login_name == undefined || login_name.length < 1) {
+                    alert("请输入正确的登录信息~~");
+                    return;
+                }
+                if (login_pwd == undefined || login_pwd.length < 1) {
+                    alert("请输入正确的登录密码~~");
+                    return;
+                }
+            btn_target.addClass("disabled");
+                $.ajax({
+                    url: "/member/login",
+                    type: "POST",
+                    data: {
+                        login_name: login_name,
+                        login_pwd: login_pwd
+                    },
+                    dataType: "json",
+                    success: function (res) {
+                        btn_target.removeClass("disabled");
+                        let callback = null;
+                        if (res.code == 200) {
+                            callback = function () {
+                                window.location.href = "/";
+                            };
+                            callback()
+                        }
+                        alert(res.msg,callback);
+                    }
+                });
+            });
+
+            $(".goreg").click(function () {
+                var btn_target = $(this);
+                if (btn_target.hasClass("disabled")) {
+                    alert("正在处理！！请不要重复点击~~");
+                    return;
+                }
+                var reg_name = $("input[name=reg_name]").val();
+                var reg_pwd = $("input[name=reg_password]").val();
+                if (reg_name == undefined || reg_name.length < 1) {
+                    alert("请输入正确的登录信息~~");
+                    return;
+                }
+                if (reg_pwd == undefined || reg_pwd.length < 1) {
+                    alert("请输入正确的登录密码~~");
+                    return;
+                }
+                btn_target.addClass("disabled");
+                $.ajax({
+                    url: "/member/reguser",
+                    type: "POST",
+                    data: {
+                        reg_name: reg_name,
+                        reg_pwd: reg_pwd
+                    },
+                    dataType: "json",
+                    success: function (res) {
+                        btn_target.removeClass("disabled");
+                        let callback = null;
+                        if (res.code == 200) {
+                            callback = function () {
+                                window.location.href = "/login";
+                            };
+                            callback()
+                        }
+                        alert(res.msg,callback);
+
+                    }
+                });
+            });
+        }
+    };
+
+    $(document).ready(function () {
+        member_login_ops.init();
+    });
+</script>
+</body>
+
+</html>
